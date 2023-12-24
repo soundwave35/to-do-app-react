@@ -1,8 +1,16 @@
 import React from "react";
 
+export const EditTodoForm = ({task, handleInput}) => {
+    const onInput = event => {
+        handleInput(task.id, event.target.value)
+    }
 
-export const EditTodoForm = () => {
-  return (
-    <div>EditTodoForm</div>
-  )
+    return (
+        <div>
+            <input
+                value={task.subject}
+                onInput={onInput}
+            />
+        </div>
+    )
 }
